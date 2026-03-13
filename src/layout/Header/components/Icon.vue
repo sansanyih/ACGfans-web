@@ -1,7 +1,7 @@
 <template>
   <div>
     <img src="" alt="">
-    <p>ACGFans</p>
+    <p>CnAcg资料站</p>
   </div>
 </template>
 

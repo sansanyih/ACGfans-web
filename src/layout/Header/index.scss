@@ -5,10 +5,14 @@
    justify-content: space-between;
    height: 80px;
    padding: 0 15px;
-   background-color: #ECE0E0ED;
+   background-color: #201A1B;
    .header-lf{
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 40px;
+      #icon{
+         font-size: 24px;
+         color: #FFB2BE;
+      }
    }
 }
