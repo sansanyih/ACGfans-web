@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <img src="" alt="">
-    <p>CnAcg资料站</p>
+  <div class="site-brand">
+    <div class="logo-placeholder"></div>
+    <span class="site-name">CnAcg资料站</span>
   </div>
 </template>
 
