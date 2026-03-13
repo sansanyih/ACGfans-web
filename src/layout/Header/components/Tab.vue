@@ -1,5 +1,5 @@
 <template>
-  <el-tabs  style="height: 200px" class="demo-tabs">
+  <el-tabs  style="height: 60px" class="demo-tabs">
     <el-tab-pane label="首页"/>
     <el-tab-pane label="每日放送"/>
     <el-tab-pane label="广场"/>

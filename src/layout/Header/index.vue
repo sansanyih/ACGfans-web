@@ -1,10 +1,14 @@
 <template>
-   <div>
-      <Icon></Icon>
-      <Tab></Tab>
-      <Button></Button>
+   <div class="header">
+      <div class="header-lf">
+         <Icon id="icon"></Icon>
+         <Tab id="tab"></Tab>
+      </div>
+      <div class="header-ri">
+         <Button></Button>
+      </div>
    </div>
-  
+
 </template>
 
 <script setup lang="ts">
