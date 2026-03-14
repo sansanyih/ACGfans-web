@@ -1,0 +1,10 @@
+.container{
+   flex-wrap: wrap;
+   margin-top: 50px;
+   .carousel{
+      // height: 450px;
+      width: 90%;
+      border-radius: 15px;
+      overflow: hidden;
+   }
+}
