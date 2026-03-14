@@ -10,3 +10,4 @@ import Home from '@/view/Home/index.vue'
 <style>
 
 </style>
+

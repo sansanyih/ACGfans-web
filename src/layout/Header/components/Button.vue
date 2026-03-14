@@ -13,3 +13,4 @@ import { Cpu, Search, Sunny } from '@element-plus/icons-vue'
 <style scoped lang="scss">
 @import '../index.scss';
 </style>
+
