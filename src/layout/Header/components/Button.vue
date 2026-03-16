@@ -1,8 +1,15 @@
 <template>
-  <div class="header-actions">
-    <Search class="action-icon"  />
-    <Sunny class="action-icon" />
-    <Cpu class="action-icon" />
+  <div class="header-actions flex-center">
+    <button class="action-button">
+      <Search class="action-icon"  />
+    </button>
+    <button class="action-button flex-center">
+      <Sunny class="action-icon" />
+    </button>
+    <button class="action-button flex-center">
+      <Cpu class="action-icon" />
+    </button>
+    
   </div>
 </template>
 

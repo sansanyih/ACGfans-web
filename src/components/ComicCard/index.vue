@@ -9,7 +9,7 @@
          <h3 class="title">{{ props.title }}</h3>
          <p class="desc">{{ props.desc }}</p>
          <span class="tag" v-for="value in props.tags">
-            <el-tag>{{ props.tags }}</el-tag>
+            <el-tag>{{ value}}</el-tag>
          </span>
       </div>
    </div>
