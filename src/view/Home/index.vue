@@ -32,9 +32,28 @@
       <div class="banner-container flx-center">
          <div v-for="item in bannerList" :key="item.id" class="banner-item">
             <a v-if="item.link" :href="item.link">
-               <el-image style="width: 43em; height: 320px"/>
+               <el-image style="width: 43em; height: 320px" />
             </a>
          </div>
+      </div>
+      <!-- 最新文章 -->
+      <div>
+         <div class="left-container">
+            <div class="article">
+            </div>
+            <div class="radio">
+            </div>
+            <div class="link">
+            </div>
+         </div>
+         <div class="right-container">
+            <div>
+
+            </div>
+         </div>
+      </div>
+      <div>
+         <Footer/>
       </div>
    </div>
 
@@ -44,6 +63,7 @@
 import Header from '@/layout/Header/index.vue'
 import Carousel from './components/Carousel.vue';
 import CardSlider from '@/components/ContentCardSlider/index.vue';
+import Footer from'@/layout/Footer/index.vue'
 // 下面是模拟的数据，暂时还没有加上api
 import { ref } from 'vue';
 interface BannerItem {
