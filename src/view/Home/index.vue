@@ -1,31 +1,60 @@
 <template>
-   <div class="header box-shadow">
-      <Header></Header>
-   </div>
-   <div class="container flx-center">
-      <div class="carousel ">
-         <Carousel></Carousel>
+   <div class="home">
+      <!-- 头部 -->
+      <div class="header box-shadow">
+         <Header></Header>
       </div>
-      <div class="card-slider">
-         <div>
-            <CardSlider title="热门漫画" :items="comicList">
-               <template #item="{ data }">
-                  <ComicCard :id="data.id" :url="data.url" :title="data.title" :desc="data.desc" :tags="data.tags" />
-               </template>
-            </CardSlider>
+      <!-- 中间推荐部分 -->
+      <div class="container flx-center">
+         <div class="carousel ">
+            <Carousel></Carousel>
+         </div>
+         <div class="card-slider">
+            <div>
+               <CardSlider title="随机推荐">
+               </CardSlider>
+            </div>
+         </div>
+         <div class="card-slider">
+            <div>
+               <CardSlider title="近期新作">
+               </CardSlider>
+            </div>
+         </div>
+         <div class="card-slider">
+            <div>
+               <CardSlider title="即将发布">
+               </CardSlider>
+            </div>
+         </div>
+      </div>
+      <!-- 三个标签页 -->
+      <div class="banner-container flx-center">
+         <div v-for="item in bannerList" :key="item.id" class="banner-item">
+            <a v-if="item.link" :href="item.link">
+               <el-image style="width: 43em; height: 320px"/>
+            </a>
          </div>
       </div>
    </div>
+
 </template>
 
 <script setup lang="ts">
 import Header from '@/layout/Header/index.vue'
 import Carousel from './components/Carousel.vue';
 import CardSlider from '@/components/ContentCardSlider/index.vue';
-import { ref } from 'vue'
-import type { Comic } from '@/components/ComicCard/types'
-const comicList = ref<Comic[]>([
-   { id: 1, url: 'xxx.jpg', title: '十天的温度', desc: '在短暂的数天里...', tags: ['冷门佳作'] }
+// 下面是模拟的数据，暂时还没有加上api
+import { ref } from 'vue';
+interface BannerItem {
+   id: number | string
+   imageUrl: string
+   link?: string  // 可选的跳转链接
+}
+const bannerList = ref<BannerItem[]>([
+   { id: 1, imageUrl: 'https://example.com/banner1.jpg', link: '/page1' },
+   { id: 2, imageUrl: 'https://example.com/banner2.jpg', link: '/page2' },
+   { id: 3, imageUrl: 'https://example.com/banner3.jpg', link: '/page3' }
 ])
 </script>
 

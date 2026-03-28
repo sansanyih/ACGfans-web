@@ -3,7 +3,7 @@
    margin-top: 50px;
    .carousel{
       // height: 450px;
-      width: 90%;
+      width: 130em;
       border-radius: 15px;
       overflow: hidden;
    }
@@ -11,5 +11,15 @@
       display: flex;
       flex-wrap: wrap;
       
+   }
+}
+.banner-container{
+   flex: 0 0 auto;
+   margin-top: 50px;
+   gap: 1rem;
+   .banner-item{
+      border-radius: 12px;
+      overflow-x: auto;
+      height: 320px;
    }
 }

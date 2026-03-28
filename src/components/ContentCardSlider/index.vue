@@ -1,42 +1,45 @@
 <template>
-   <div class="cardSlider">
-      <div class="header">
-         <!-- 左侧标题 -->
-         <div class="header-left">
-            <slot name="title">
-               <h2 class="default-title">{{ title }}</h2>
-            </slot>
-
-         </div>
-         <!-- 右侧操作 -->
-         <div class="header-right">
-               <span class="default-action">
-                  <el-icon>
-                     <slot name="icon">
-                     </slot>
-                  </el-icon>
-                  {{ description }}
-               </span>
-         </div>
+   <div class="card-slider">
+      <!-- Header -->
+      <div class="slider-header">
+         <!-- <h2 class="title">{{ title }}</h2>
+         <span class="action" @click="refresh">
+            <el-icon>
+               <Refresh />
+            </el-icon>
+            换一批
+         </span> -->
+         <h2 class="title">{{ title }}</h2>
       </div>
-      <div>
-         <el-carousel>
-            <el-carousel-item v-for="item in props.items" :key="item.id">
-               <slot name="item" :data="item">
-               </slot>
-            </el-carousel-item>
-         </el-carousel>
+
+      <!-- Cards Container -->
+      <div class="slider-wrapper">
+         <button class="arrow left" @click="scroll('left')">←</button>
+
+         <div ref="sliderRef" class="slider">
+            <div v-for="i in 10" :key="i" class="card-box"></div>
+         </div>
+
+         <button class="arrow right" @click="scroll('right')">→</button>
       </div>
    </div>
 </template>
+
 <script setup lang="ts" generic="T extends { id: string | number }">
-interface Props {
-   title?: string
-   description?: string
-   items: T[]           // 使用泛型数组
+import { ref } from 'vue';
+const props = defineProps<{
+  title: string
+}>()
+const sliderRef = ref<HTMLElement>()
+
+const scroll = (direction: 'left' | 'right') => {
+   if (!sliderRef.value) return
+   sliderRef.value.scrollBy({
+      left: direction === 'left' ? -280 : 280,
+      behavior: 'smooth'
+   })
 }
-
-const props = defineProps<Props>()
-
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@import './index.scss';
+</style>
