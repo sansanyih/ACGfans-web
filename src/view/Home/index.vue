@@ -4,7 +4,7 @@
       <div class="header box-shadow">
          <Header></Header>
       </div>
-      <!-- 中间推荐部分 -->
+      <!-- 中间推荐部分，之后修改成for渲染 -->
       <div class="container flx-center">
          <div class="carousel ">
             <Carousel></Carousel>
@@ -36,24 +36,32 @@
             </a>
          </div>
       </div>
-      <!-- 最新文章 -->
+      <!-- 动态 -->
       <div>
+         <div class="moment">
+         </div>
+      </div>
+      <!-- 最新文章 -->
+      <div class="featured-section flx-center">
          <div class="left-container">
-            <div class="article">
-            </div>
-            <div class="radio">
-            </div>
+            <CardSlider title="最新文章" class="article wide-slider">
+            </CardSlider>
+            <CardSlider title="最新视频" class="radio wide-slider">
+            </CardSlider>
             <div class="link">
             </div>
          </div>
          <div class="right-container">
-            <div>
+            <div class="birthday">
+
+            </div>
+            <div class="notice">
 
             </div>
          </div>
       </div>
       <div>
-         <Footer/>
+         <Footer />
       </div>
    </div>
 
@@ -63,7 +71,8 @@
 import Header from '@/layout/Header/index.vue'
 import Carousel from './components/Carousel.vue';
 import CardSlider from '@/components/ContentCardSlider/index.vue';
-import Footer from'@/layout/Footer/index.vue'
+import SidebarSection from '@/view/Home/components/SidebarSection/index.vue'
+import Footer from '@/layout/Footer/index.vue'
 // 下面是模拟的数据，暂时还没有加上api
 import { ref } from 'vue';
 interface BannerItem {

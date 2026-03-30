@@ -22,3 +22,14 @@
       overflow-x: auto;
    }
 }
+.featured-section {
+   display: flex;
+   .left-container{
+      :deep(.wide-slider){
+         --card-slider-width: 95em;
+      }
+   }
+   .right-container{
+      width: 30em;
+   }
+}

@@ -1,61 +1,63 @@
-
-.card-slider{
+.card-slider {
    display: flex;
    flex-direction: column;
    flex-wrap: wrap;
    margin-top: 50px;
-   .slider-header{
+   // width: var(--card-slider-width, auto);
+   .slider-header {
       margin-left: 4em;
-         .title{
-      font-size: 50px;
-   }
-   }
 
-.slider-wrapper {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   gap: 0.75rem;
-   padding: 0 1rem;
-   margin-top: 25px;
-   .slider {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      width: min(125em, 95vw);
-
-      &::-webkit-scrollbar {
-         display: none;
-      }
-
-      scrollbar-width: none;
-
-      .card-box {
-         flex: 0 0 auto;
-         width: 25em;
-         height: 350px;
-         background: #f0f0f0;
-         border-radius: 12px;
+      .title {
+         font-size: 50px;
       }
    }
 
-   .arrow {
-      width: 2.5rem;
-      height: 2.5rem;
-      border: 1px solid #e0e0e0;
-      border-radius: 50%;
-      background: #fff;
-      cursor: pointer;
-      flex-shrink: 0;
+   .slider-wrapper {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 0.75rem;
+      padding: 0 1rem;
+      margin-top: 25px;
 
-      &:hover {
-         border-color: var(--color-primary, #c41e3a);
-         color: var(--color-primary, #c41e3a);
+      .slider {
+         display: flex;
+         gap: 1rem;
+         overflow-x: auto;
+         scroll-behavior: smooth;
+         width: min(var(--card-slider-width, 125em), var(--card-slider-viewport, 95vw));
+
+         &::-webkit-scrollbar {
+            display: none;
+         }
+
+         scrollbar-width: none;
+
+         .card-box {
+            flex: 0 0 auto;
+            width: 25em;
+            height: 350px;
+            background: #f0f0f0;
+            border-radius: 12px;
+         }
+      }
+
+      .arrow {
+         width: 2.5rem;
+         height: 2.5rem;
+         border: 1px solid #e0e0e0;
+         border-radius: 50%;
+         background: #fff;
+         cursor: pointer;
+         flex-shrink: 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         &:hover {
+            border-color: var(--color-primary, #c41e3a);
+            color: var(--color-primary, #c41e3a);
+         }
       }
    }
-}
 }
