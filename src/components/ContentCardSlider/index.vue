@@ -2,16 +2,8 @@
    <div class="card-slider">
       <!-- Header -->
       <div class="slider-header">
-         <!-- <h2 class="title">{{ title }}</h2>
-         <span class="action" @click="refresh">
-            <el-icon>
-               <Refresh />
-            </el-icon>
-            换一批
-         </span> -->
          <h2 class="title">{{ title }}</h2>
       </div>
-
       <!-- Cards Container -->
       <div class="slider-wrapper">
          <button class="arrow left" @click="scroll('left')">←</button>
@@ -19,7 +11,6 @@
          <div ref="sliderRef" class="slider">
             <div v-for="i in 10" :key="i" class="card-box"></div>
          </div>
-
          <button class="arrow right" @click="scroll('right')">→</button>
       </div>
    </div>

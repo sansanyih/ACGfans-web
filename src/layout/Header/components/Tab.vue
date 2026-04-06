@@ -19,8 +19,9 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const tabs = [
   { label: '首页', name: 'home' },
-  { label: '游戏折扣', name: 'discount' },
-  { label: '抽奖', name: 'lottery' },
+  // { label: '折扣', name: 'discount' },
+  // { label: '抽奖', name: 'lottery' },
+  // 没时间做了QAQ
   { label: '广场', name: 'discuss' },
   { label: '分享游玩记录', name: 'share' },
 ]

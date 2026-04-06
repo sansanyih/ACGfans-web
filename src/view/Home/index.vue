@@ -27,36 +27,36 @@
                </CardSlider>
             </div>
          </div>
-      </div>
-      <!-- 三个标签页 -->
-      <div class="banner-container flx-center">
-         <div v-for="item in bannerList" :key="item.id" class="banner-item">
-            <a v-if="item.link" :href="item.link">
-               <el-image style="width: 43em; height: 320px" />
-            </a>
-         </div>
-      </div>
-      <!-- 动态 -->
-      <div>
-         <div class="moment">
-         </div>
-      </div>
-      <!-- 最新文章 -->
-      <div class="featured-section flx-center">
-         <div class="left-container">
-            <CardSlider title="最新文章" class="article wide-slider">
-            </CardSlider>
-            <CardSlider title="最新视频" class="radio wide-slider">
-            </CardSlider>
-            <div class="link">
+
+         <!-- 三个标签页 -->
+         <div class="banner-container flx-center">
+            <div v-for="item in bannerList" :key="item.id" class="banner-item">
+               <a v-if="item.link" :href="item.link">
+                  <el-image style="width: 43em; height: 320px" />
+               </a>
             </div>
          </div>
-         <div class="right-container">
-            <div class="birthday">
-
+         <!-- 动态 -->
+         <div>
+            <div class="moment">
             </div>
-            <div class="notice">
+         </div>
+         <!-- 最新文章 -->
+         <div class="featured-section flx-center">
+            <div class="left-container">
+               <CardSlider title="最新文章" class="article wide-slider">
+               </CardSlider>
+               <CardSlider title="最新视频" class="radio wide-slider">
+               </CardSlider>
+               <Link></Link>
+            </div>
+            <div class="right-container">
+               <div class="birthday">
 
+               </div>
+               <div class="notice">
+
+               </div>
             </div>
          </div>
       </div>
@@ -69,8 +69,9 @@
 
 <script setup lang="ts">
 import Header from '@/layout/Header/index.vue'
-import Carousel from './components/Carousel.vue';
+import Carousel from './components/Carousel/Carousel.vue';
 import CardSlider from '@/components/ContentCardSlider/index.vue';
+import Link from "@/view/Home/components/Link/index.vue"
 import SidebarSection from '@/view/Home/components/SidebarSection/index.vue'
 import Footer from '@/layout/Footer/index.vue'
 // 下面是模拟的数据，暂时还没有加上api
