@@ -1,63 +1,66 @@
 .card-slider {
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   margin-top: 50px;
-   // width: var(--card-slider-width, auto);
-   .slider-header {
-      margin-left: 4em;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 100%; // 确保占满父级宽度
 
-      .title {
-         font-size: 50px;
+  .slider-header {
+    margin-left: 5%; // 使用百分比或 padding 替代固定的 em，更适配移动端
+    margin-bottom: 20px;
+
+    .title {
+      margin-left: 40px;
+      font-size: 60px; // 响应式字体：最小24，随屏幕变大，最大40
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  .slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box; // 确保 padding 不增加宽度
+
+    .slider {
+      // 关键修改：用 flex: 1 占据剩余空间，而不是 width: 100%
+      flex: 1;
+      min-width: 0; // 允许 flex item 收缩
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        display: none;
       }
-   }
 
-   .slider-wrapper {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .arrow {
+      width: 45px;
+      height: 45px;
+      // 关键：确保箭头不被压缩
+      flex-shrink: 0;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem;
-      padding: 0 1rem;
-      margin-top: 25px;
+      transition: all 0.3s ease;
 
-      .slider {
-         display: flex;
-         gap: 1rem;
-         overflow-x: auto;
-         scroll-behavior: smooth;
-         width: min(var(--card-slider-width, 125em), var(--card-slider-viewport, 95vw));
-
-         &::-webkit-scrollbar {
-            display: none;
-         }
-
-         scrollbar-width: none;
-
-         .card-box {
-            flex: 0 0 auto;
-            width: 25em;
-            height: 350px;
-            background: #f0f0f0;
-            border-radius: 12px;
-         }
+      &:hover {
+        border-color: var(--color-primary, #c41e3a);
+        color: var(--color-primary, #c41e3a);
+        transform: scale(1.1);
       }
-
-      .arrow {
-         width: 2.5rem;
-         height: 2.5rem;
-         border: 1px solid #e0e0e0;
-         border-radius: 50%;
-         background: #fff;
-         cursor: pointer;
-         flex-shrink: 0;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-
-         &:hover {
-            border-color: var(--color-primary, #c41e3a);
-            color: var(--color-primary, #c41e3a);
-         }
-      }
-   }
+    }
+  }
 }

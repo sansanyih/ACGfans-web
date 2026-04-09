@@ -1,0 +1,245 @@
+.article-detail-page {
+   min-height: 100vh;
+   background: #f5f5f5;
+}
+
+.article-container {
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 40px 20px;
+   background: #fff;
+   border-radius: 12px;
+   margin-top: 20px;
+   margin-bottom: 40px;
+}
+
+.article-title {
+   font-size: 32px;
+   font-weight: 600;
+   color: #333;
+   margin-bottom: 20px;
+   line-height: 1.4;
+}
+
+.article-header {
+   display: flex;
+   align-items: center;
+   margin-bottom: 20px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid #eee;
+
+   .meta-left {
+      display: flex;
+      gap: 20px;
+      color: #666;
+      font-size: 14px;
+
+      span {
+         display: flex;
+         align-items: center;
+         gap: 6px;
+      }
+   }
+}
+
+.author-card {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+   padding: 20px;
+   background: #fafafa;
+   border-radius: 8px;
+   margin-bottom: 30px;
+
+   .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+   }
+
+   .avatar-placeholder {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #c41e3a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+   }
+
+   .author-info {
+      .author-name-row {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         margin-bottom: 8px;
+
+         .name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+         }
+
+         .level {
+            padding: 2px 8px;
+            background: #4caf50;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 4px;
+         }
+
+         .badge {
+            padding: 2px 8px;
+            background: #c41e3a;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 4px;
+         }
+      }
+
+      .author-bio {
+         font-size: 14px;
+         color: #666;
+      }
+   }
+}
+
+.article-content {
+   font-size: 16px;
+   line-height: 1.8;
+   color: #333;
+   margin-bottom: 40px;
+
+   p {
+      margin-bottom: 16px;
+   }
+}
+
+.comment-section {
+   .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #c41e3a;
+   }
+}
+
+.comment-list {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.comment-item {
+   padding: 20px;
+   background: #fff;
+   border-radius: 8px;
+   border: 1px solid #eee;
+
+   &.author-reply {
+      background: #fce4ec;
+   }
+}
+
+.comment-header {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   margin-bottom: 12px;
+
+   .comment-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+   }
+
+   .avatar-placeholder {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #c41e3a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+   }
+
+   .comment-user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .username {
+         font-size: 16px;
+         font-weight: 600;
+         color: #333;
+      }
+
+      .level {
+         padding: 2px 6px;
+         background: #4caf50;
+         color: #fff;
+         font-size: 11px;
+         border-radius: 4px;
+      }
+
+      .badge {
+         padding: 2px 6px;
+         background: #c41e3a;
+         color: #fff;
+         font-size: 11px;
+         border-radius: 4px;
+
+         &.author-badge {
+            background: #ff5722;
+         }
+      }
+   }
+}
+
+.comment-content {
+   font-size: 15px;
+   line-height: 1.6;
+   color: #333;
+   margin-bottom: 12px;
+
+   p {
+      margin-bottom: 8px;
+   }
+}
+
+.comment-footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   .comment-date {
+      font-size: 13px;
+      color: #999;
+   }
+
+   .reply-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      background: #c41e3a;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+
+      &:hover {
+         opacity: 0.9;
+      }
+   }
+}

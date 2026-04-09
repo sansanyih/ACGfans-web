@@ -10,22 +10,13 @@
             <Carousel></Carousel>
          </div>
          <div class="card-slider">
-            <div>
-               <CardSlider title="随机推荐">
-               </CardSlider>
-            </div>
+            <RandomRecommend />
          </div>
          <div class="card-slider">
-            <div>
-               <CardSlider title="近期新作">
-               </CardSlider>
-            </div>
+            <LatestAnimation />
          </div>
          <div class="card-slider">
-            <div>
-               <CardSlider title="即将发布">
-               </CardSlider>
-            </div>
+            <UpcomingAnimation />
          </div>
 
          <!-- 三个标签页 -->
@@ -44,8 +35,7 @@
          <!-- 最新文章 -->
          <div class="featured-section flx-center">
             <div class="left-container">
-               <CardSlider title="最新文章" class="article wide-slider">
-               </CardSlider>
+               <LatesArticles />
                <CardSlider title="最新视频" class="radio wide-slider">
                </CardSlider>
                <Link></Link>
@@ -71,6 +61,10 @@
 import Header from '@/layout/Header/index.vue'
 import Carousel from './components/Carousel/Carousel.vue';
 import CardSlider from '@/components/ContentCardSlider/index.vue';
+import RandomRecommend from "./components/RandomRecommend/index.vue"
+import LatestAnimation from "./components/LatestAnimation/index.vue"
+import UpcomingAnimation from "./components/UpcomingAnimation/index.vue"
+import LatesArticles from "./components/LatesArticles/index.vue"
 import Link from "@/view/Home/components/Link/index.vue"
 import SidebarSection from '@/view/Home/components/SidebarSection/index.vue'
 import Footer from '@/layout/Footer/index.vue'

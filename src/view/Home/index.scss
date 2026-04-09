@@ -1,36 +1,60 @@
-.container{
+.container {
    flex-wrap: wrap;
    margin-top: 50px;
    padding: 0 80px;
-   .carousel{
-      // height: 450px;
-      width: 130em;
+
+   .carousel {
+      width: 100%; // 改为 100%，自动受 padding 限制
       border-radius: 15px;
       overflow: hidden;
    }
-   .card-slider{
+
+   .card-slider {
       display: flex;
       flex-wrap: wrap;
-      
+      width: 100%; // 填满父容器（受 padding 0 80px 限制）
+      margin-top: 20px; // 和轮播图间距
+
    }
 }
-.banner-container{
-   flex: 0 0 auto;
+
+.banner-container {
+   display: flex; // 使用 flex 布局
+   width: 100%; // 占满 100%
+   gap: 1rem; // 间隔
    margin-top: 50px;
-   gap: 1rem;
-   .banner-item{
+
+   .banner-item {
+      flex: 1; // 平分剩余空间
+      min-width: 0; // 允许收缩
       border-radius: 12px;
-      overflow-x: auto;
+      overflow: hidden;
+
+      a {
+         display: block;
+         width: 100%;
+         height: 100%;
+      }
+
+      .el-image {
+         width: 100% !important; // 覆盖内联样式
+         height: 320px !important; // 保持高度
+         display: block;
+      }
    }
 }
+
 .featured-section {
    display: flex;
-   .left-container{
-      :deep(.wide-slider){
+   width: 100%;
+
+   .left-container {
+      :deep(.wide-slider) {
          --card-slider-width: 95em;
       }
    }
-   .right-container{
+
+   .right-container {
       width: 30em;
    }
 }
