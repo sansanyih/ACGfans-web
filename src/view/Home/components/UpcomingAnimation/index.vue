@@ -13,7 +13,7 @@
             <div class="card-title">
                {{ item.title }}
             </div>
-            <div>
+            <div class="card-desc">
                {{ item.description }}
             </div>
          </div>

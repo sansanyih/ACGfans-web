@@ -19,8 +19,8 @@
 
          <div class="banner-container flx-center">
             <div v-for="item in bannerList" :key="item.id" class="banner-item">
-               <a v-if="item.link" :href="item.link">
-                  <el-image style="width: 100%; height: 320px" />
+               <a v-if="item.imageUrl" :href="item.link || 'javascript:void(0)'" target="_blank">
+                  <el-image style="width: 100%; height: 100%" :src="item.imageUrl"/>
                </a>
             </div>
          </div>
@@ -66,9 +66,9 @@ import CommunityLinks from "./components/CommunityLinks/index.vue"
 import Link from "@/view/Home/components/Link/index.vue"
 
 const bannerList = ref([
-   { id: 1, imageUrl: '', link: '/page1' },
-   { id: 2, imageUrl: '', link: '/page2' },
-   { id: 3, imageUrl: '', link: '/page3' }
+   { id: 1, link: '', imageUrl: 'https://jsd.onmicrosoft.cn/gh/sansanyih/tuchuang@main/img/view_3.jpg' },
+   { id: 2, link: '', imageUrl: 'https://jsd.onmicrosoft.cn/gh/sansanyih/tuchuang@main/img/view_2.jpg' },
+   { id: 3, link: '', imageUrl: 'https://jsd.onmicrosoft.cn/gh/sansanyih/tuchuang@main/img/view_3.jpg' }
 ])
 </script>
 

@@ -3,7 +3,7 @@
       <!-- 引用语 -->
       <div class="quote-section">
          <p class="quote-text">"每个人都可以参与到编辑中，同时每个人都能享有编辑后的成果。"</p>
-         <p class="quote-sub">—— CnGal资料站 V3 正式上线后的感谢！</p>
+         <p class="quote-sub">—— CnAcg资料站 V3 正式上线后的感谢！</p>
       </div>
 
       <!-- 主要内容 -->
@@ -11,13 +11,13 @@
          <!-- 左侧信息 -->
          <div class="footer-left">
             <div class="logo">
-               <span class="logo-main">CnGal.org</span>
-               <span class="logo-sub">中文Galgame资料站</span>
+               <span class="logo-main">CnAcg.org</span>
+               <span class="logo-sub">中文Acg资料站</span>
             </div>
             <p class="description">
-               CnGal是一个非营利性的，立志于收集整理国内制作组创作及中文化的中文Galgame/AVG的介绍、攻略、评测、感想等内容的资料性质的网站。此外，CnGal官方还会与圈内中文AVG制作组进行友好合作，如免费提供Banner广告位，网站服务器资源等。
+               CnAcg是一个非营利性的，立志于收集整理国内制作组创作及中文化的中文CnAcg的介绍、评测、感想等内容的资料性质的网站。此外，CnAcg官方还会与圈内中文制作组进行友好合作，如免费提供Banner广告位，网站服务器资源等。
             </p>
-            <p class="email">不良信息举报邮箱：help@cngal.org</p>
+            <p class="email">不良信息举报邮箱：help@CnAcg.org</p>
          </div>
 
          <!-- 右侧链接 -->
@@ -47,9 +47,9 @@
 
       <!-- 底部版权 -->
       <div class="footer-bottom">
-         <span class="copyright">© 2025 - CnGal资料站</span>
-         <a href="#" class="icp">粤ICP备15055899号</a>
-         <a href="#" class="icp">萌ICP备20225899号</a>
+         <span class="copyright">© 2025 - CnAcg资料站</span>
+         <a href="#" class="icp">粤ICP备11111111号</a>
+         <a href="#" class="icp">萌ICP备22222222号</a>
       </div>
    </footer>
 </template>

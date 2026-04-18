@@ -1,12 +1,12 @@
 .anime-card {
+   margin-bottom: 20px;
    flex: 0 0 auto;
    width: 360px;
-   background: #fff;
+   background: var(--bg-card);
    border-radius: 12px;
    overflow: hidden;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
    cursor: pointer;
-
    &:hover {
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
    }
@@ -40,13 +40,12 @@
 .card-text {
    width: 100%;
    height: 210px;
-}
-
-.card-info {
    padding: 15px;
+   display: flex;
+   flex-direction: column;
 
    .card-title {
-      font-size: 16px;
+      font-size: 36px;
       font-weight: 600;
       color: #333;
       margin-bottom: 8px;
@@ -56,30 +55,20 @@
    }
 
    .card-desc {
-      font-size: 13px;
+      font-size: 23px;
       color: #666;
       line-height: 1.5;
-      margin-bottom: 12px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      height: 60px;
-   }
-
-   .card-tag {
-      display: inline-block;
-      padding: 4px 10px;
-      background: #c41e3a;
-      color: #fff;
-      font-size: 12px;
-      border-radius: 4px;
+      flex: 1;
    }
 }
 
 // 换一批卡片样式
 .refresh-card {
-   height: 320px; // 和其他卡片一样高
+   height: 400px; // 和其他卡片一样高
    width: 140px;;
    display: flex;
    align-items: center;

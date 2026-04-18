@@ -1,8 +1,7 @@
 .community-links-section {
-   background: #fff;
+   background: var(--bg-body);
    border-radius: 12px;
    padding: 20px;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
    width: 100%;
    box-sizing: border-box;
 
@@ -24,7 +23,8 @@
       align-items: center;
       gap: 12px;
       padding: 16px;
-      background: #fafafa;
+      background: var(--bg-card);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       border-radius: 10px;
       text-decoration: none;
       transition: all 0.3s;
