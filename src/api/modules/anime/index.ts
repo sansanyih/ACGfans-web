@@ -25,6 +25,12 @@ export const animeApi = {
    // 获取详情
    getById(id: number): Promise<AnimeDetail> {
       return http.get(ANIME_URLS.GET_BY_ID(id))
+   },
+      update(id: number, data: Partial<AnimeDetail>): Promise<AnimeDetail> {
+      return http.put(ANIME_URLS.UPDATE(id), data)
+   },
+      getRecentUpdated(): Promise<AnimeListResponse> {
+      return http.get(ANIME_URLS.GET_RECENT_UPDATED)
    }
 }
 

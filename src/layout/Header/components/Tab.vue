@@ -15,24 +15,39 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
 
 const tabs = [
-  { label: '首页', name: 'home' },
-  // { label: '折扣', name: 'discount' },
-  // { label: '抽奖', name: 'lottery' },
-  // 没时间做了QAQ
-  { label: '广场', name: 'discuss' },
-  { label: '分享游玩记录', name: 'share' },
+  { label: '首页', name: 'home', path: '/home' },
+  { label: '广场', name: 'discuss', path: '/discuss' },
+  { label: '分享游玩记录', name: 'share', path: '/share' },
 ]
 
-const activeIndex = ref(0)
+const activeIndex = ref(-1)
 const tabListRef = ref<HTMLElement>()
 const itemWidths = ref<number[]>([])
 
-// 计算下划线位置和宽度
+// 根据当前路由设置高亮
+const updateActiveByRoute = () => {
+  const currentPath = route.path
+  const index = tabs.findIndex(tab => {
+    if (tab.path === '/home') {
+      return currentPath === '/home' || currentPath === '/'
+    }
+    return currentPath === tab.path
+  })
+  activeIndex.value = index
+}
+
+// 计算下划线位置
 const lineStyle = computed(() => {
   const index = activeIndex.value
+  if (index === -1) return { display: 'none' }
+  
   const left = itemWidths.value
     .slice(0, index)
     .reduce((sum, w) => sum + w, 0)
@@ -40,10 +55,11 @@ const lineStyle = computed(() => {
   return {
     transform: `translateX(${left}px)`,
     width: `${width}px`,
+    display: 'block'
   }
 })
 
-// 触发遮罩动画
+// 遮罩动画
 const triggerRipple = (el: HTMLElement) => {
   const ripple = el.querySelector('.tab-ripple') as HTMLElement
   if (!ripple) return
@@ -52,23 +68,28 @@ const triggerRipple = (el: HTMLElement) => {
   ripple.style.animation = 'ripple-effect 0.4s ease-out'
 }
 
-// 计算每个 tab 的宽度
+// 计算宽度
 const calcWidths = () => {
   if (!tabListRef.value) return
   const items = tabListRef.value.querySelectorAll('.tab-item')
   itemWidths.value = Array.from(items).map((el) => (el as HTMLElement).offsetWidth)
 }
 
-// 点击处理
+// 点击跳转
 const handleClick = (index: number, event: MouseEvent) => {
   const target = event.currentTarget as HTMLElement
   triggerRipple(target)
-  activeIndex.value = index
+  
+  const tab = tabs[index]
+  if (tab && tab.path) {
+    router.push(tab.path)
+  }
 }
 
 let resizeObserver: ResizeObserver | null = null
 
 onMounted(() => {
+  updateActiveByRoute()
   calcWidths()
   if (window.ResizeObserver && tabListRef.value) {
     resizeObserver = new ResizeObserver(calcWidths)
@@ -85,9 +106,11 @@ onUnmounted(() => {
     window.removeEventListener('resize', calcWidths)
   }
 })
+
+// 监听路由变化更新高亮
+watch(() => route.path, updateActiveByRoute)
 </script>
 
 <style scoped lang="scss">
 @import '../index.scss';
 </style>
-

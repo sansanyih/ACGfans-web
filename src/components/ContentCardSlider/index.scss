@@ -5,12 +5,11 @@
   width: 100%; // 确保占满父级宽度
 
   .slider-header {
-    margin-left: 5%; // 使用百分比或 padding 替代固定的 em，更适配移动端
     margin-bottom: 20px;
 
     .title {
       margin-left: 40px;
-      font-size: 60px; // 响应式字体：最小24，随屏幕变大，最大40
+      font-size: 60px; 
       font-weight: 600;
       color: #333;
     }
@@ -26,10 +25,10 @@
     box-sizing: border-box; // 确保 padding 不增加宽度
 
     .slider {
-      // 关键修改：用 flex: 1 占据剩余空间，而不是 width: 100%
       flex: 1;
       min-width: 0; // 允许 flex item 收缩
       display: flex;
+      justify-content: flex-start;
       gap: 1.5rem;
       overflow-x: auto;
       scroll-behavior: smooth;

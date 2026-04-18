@@ -1,87 +1,76 @@
 <template>
    <div class="home">
-      <!-- 头部 -->
-      <div class="header box-shadow">
-         <Header></Header>
-      </div>
-      <!-- 中间推荐部分，之后修改成for渲染 -->
       <div class="container flx-center">
-         <div class="carousel ">
+         <div class="carousel">
             <Carousel></Carousel>
          </div>
+
          <div class="card-slider">
             <RandomRecommend />
          </div>
+
          <div class="card-slider">
             <LatestAnimation />
          </div>
+
          <div class="card-slider">
             <UpcomingAnimation />
          </div>
 
-         <!-- 三个标签页 -->
          <div class="banner-container flx-center">
             <div v-for="item in bannerList" :key="item.id" class="banner-item">
                <a v-if="item.link" :href="item.link">
-                  <el-image style="width: 43em; height: 320px" />
+                  <el-image style="width: 100%; height: 320px" />
                </a>
             </div>
          </div>
-         <!-- 动态 -->
-         <div>
-            <div class="moment">
+         <div class="content-with-sidebar">
+            <div class="main-content">
+               <LatestFeed />
+            </div>
+            <div class="sidebar">
+               <WeeklyReport />
             </div>
          </div>
-         <!-- 最新文章 -->
-         <div class="featured-section flx-center">
+         <div class="featured-section ">
             <div class="left-container">
                <LatesArticles />
-               <CardSlider title="最新视频" class="radio wide-slider">
-               </CardSlider>
+               <LatestVideo />
                <Link></Link>
             </div>
             <div class="right-container">
-               <div class="birthday">
-
-               </div>
-               <div class="notice">
-
-               </div>
+               <CharacterBirthday />
+               <AnnouncementSection />
+               <RecentEdit />
+               <CommunityLinks />
             </div>
          </div>
       </div>
-      <div>
-         <Footer />
-      </div>
    </div>
-
 </template>
 
 <script setup lang="ts">
-import Header from '@/layout/Header/index.vue'
-import Carousel from './components/Carousel/Carousel.vue';
-import CardSlider from '@/components/ContentCardSlider/index.vue';
+import { ref } from 'vue'
+import Carousel from './components/Carousel/Carousel.vue'
 import RandomRecommend from "./components/RandomRecommend/index.vue"
 import LatestAnimation from "./components/LatestAnimation/index.vue"
 import UpcomingAnimation from "./components/UpcomingAnimation/index.vue"
+import LatestFeed from "./components/LatestFeed/index.vue"
+import LatestVideo from "./components/LatestVideo/index.vue"
+import WeeklyReport from "./components/WeeklyReport/index.vue"
 import LatesArticles from "./components/LatesArticles/index.vue"
+import CharacterBirthday from "./components/CharacterBirthday/index.vue"
+import AnnouncementSection from "./components/AnnouncementSection/index.vue"
+import RecentEdit from "./components/RecentEdit/index.vue"
+import CommunityLinks from "./components/CommunityLinks/index.vue"
 import Link from "@/view/Home/components/Link/index.vue"
-import SidebarSection from '@/view/Home/components/SidebarSection/index.vue'
-import Footer from '@/layout/Footer/index.vue'
-// 下面是模拟的数据，暂时还没有加上api
-import { ref } from 'vue';
-interface BannerItem {
-   id: number | string
-   imageUrl: string
-   link?: string  // 可选的跳转链接
-}
-const bannerList = ref<BannerItem[]>([
-   { id: 1, imageUrl: 'https://example.com/banner1.jpg', link: '/page1' },
-   { id: 2, imageUrl: 'https://example.com/banner2.jpg', link: '/page2' },
-   { id: 3, imageUrl: 'https://example.com/banner3.jpg', link: '/page3' }
+
+const bannerList = ref([
+   { id: 1, imageUrl: '', link: '/page1' },
+   { id: 2, imageUrl: '', link: '/page2' },
+   { id: 3, imageUrl: '', link: '/page3' }
 ])
 </script>
-
 
 <style scoped lang="scss">
 @import './index.scss';
