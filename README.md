@@ -70,7 +70,7 @@
 | 样式                       | Sass（`variables.scss` 通过 Vite 自动注入）                                          |
 | 代码质量                   | ESLint 9 + oxlint + Prettier、`vue-tsc` 类型检查                                     |
 | 测试                       | Vitest（单元）、Playwright（E2E）                                                    |
-| 运行时要求：`node ^20.19.0 |                                                                                      | >=22.12.0` |
+| 运行时要求：`node ^20.19.0 |                                                                                      | >=22.12.0` \|
 
 ---
 
