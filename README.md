@@ -60,17 +60,17 @@
 
 ## 技术栈
 
-| 分类                       | 选型                                                                                 |
-| -------------------------- | ------------------------------------------------------------------------------------ | ---------- |
-| 核心框架                   | Vue 3.5（`<script setup>` 组合式 API）、TypeScript 5.9                               |
-| 构建工具                   | Vite 7（`@vitejs/plugin-vue`、`@vitejs/plugin-vue-jsx`、`vite-plugin-vue-devtools`） |
-| 路由与状态                 | Vue Router 5（懒加载 + 模块化自动注册）、Pinia 3                                     |
-| UI 与可视化                | Element Plus 2.13 + `@element-plus/icons-vue`、ECharts 6                             |
-| 请求与工具                 | Axios 1.14（自定义封装）、qs、dayjs                                                  |
-| 样式                       | Sass（`variables.scss` 通过 Vite 自动注入）                                          |
-| 代码质量                   | ESLint 9 + oxlint + Prettier、`vue-tsc` 类型检查                                     |
-| 测试                       | Vitest（单元）、Playwright（E2E）                                                    |
-| 运行时要求：`node ^20.19.0 |                                                                                      | >=22.12.0` \|
+| 分类       | 选型                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------ |
+| 核心框架   | Vue 3.5（`<script setup>` 组合式 API）、TypeScript 5.9                               |
+| 构建工具   | Vite 7（`@vitejs/plugin-vue`、`@vitejs/plugin-vue-jsx`、`vite-plugin-vue-devtools`） |
+| 路由与状态 | Vue Router 5（懒加载 + 模块化自动注册）、Pinia 3                                     |
+| UI 与可视化| Element Plus 2.13 + `@element-plus/icons-vue`、ECharts 6                             |
+| 请求与工具 | Axios 1.14（自定义封装）、qs、dayjs                                                  |
+| 样式       | Sass（`variables.scss` 通过 Vite 自动注入）                                          |
+| 代码质量   | ESLint 9 + oxlint + Prettier、`vue-tsc` 类型检查                                     |
+| 测试       | Vitest（单元）、Playwright（E2E）                                                    |
+| 运行时要求 | `node ^20.19.0 \|\| >=22.12.0`                                                       |
 
 ---
 
