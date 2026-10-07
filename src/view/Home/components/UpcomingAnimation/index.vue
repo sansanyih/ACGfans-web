@@ -1,5 +1,5 @@
 <template>
-   <CardSlider title="近期新作" :scrollStep="260">
+   <CardSlider title="即将推出" :scrollStep="260">
       <!-- 动漫卡片 -->
       <div v-for="item in animeList" :key="item.id" class="anime-card" @click="goToDetail(item.id)">
          <div class="card-image">

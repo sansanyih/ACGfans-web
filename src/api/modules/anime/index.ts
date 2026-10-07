@@ -31,6 +31,9 @@ export const animeApi = {
    },
       getRecentUpdated(): Promise<AnimeListResponse> {
       return http.get(ANIME_URLS.GET_RECENT_UPDATED)
+   },
+   insert(data: Partial<AnimeDetail>): Promise<AnimeDetail> {
+      return http.post(ANIME_URLS.INSERT, data)
    }
 }
 

@@ -9,6 +9,9 @@ export const videoApi = {
    
    getById(id: number): Promise<VideoDetail> {
       return http.get(VIDEO_URLS.GET_BY_ID(id))
+   },
+   insert(data: Partial<VideoDetail>): Promise<VideoDetail> {
+      return http.post(VIDEO_URLS.INSERT, data)
    }
 }
 

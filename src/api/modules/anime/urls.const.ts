@@ -6,5 +6,6 @@ export const ANIME_URLS = {
    GET_UPCOMING:'/anime/get/upcoming',//即将上映的番剧
    GET_BY_ID: (id: number) => `/anime/get/${id}`,  // 详情页
    UPDATE: (id: number) => `/anime/update/${id}`, //更新
-   GET_RECENT_UPDATED: '/anime/get/recent-updated'//最近编辑
+   GET_RECENT_UPDATED: '/anime/get/recent-updated',//最近编辑
+   INSERT: '/anime/insert' // 新增
 } as const

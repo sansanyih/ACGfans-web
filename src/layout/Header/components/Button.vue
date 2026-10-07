@@ -1,11 +1,39 @@
 <template>
    <div class="header-actions flex-center">
-      <button class="action-button">
+      <button class="action-button" @click="goToSearch">
          <Search class="action-icon" />
       </button>
       <button class="action-button flex-center">
          <Sunny class="action-icon" />
       </button>
+      
+      <!-- 加号菜单（仅登录后显示） -->
+      <el-dropdown
+         v-if="userStore.isLoggedIn"
+         trigger="click"
+         placement="bottom-end"
+         popper-class="create-dropdown"
+      >
+         <button class="action-button flex-center">
+            <Plus class="action-icon" />
+         </button>
+         <template #dropdown>
+            <div class="create-menu">
+               <div class="create-item" @click="goToAnimeAdd">
+                  <el-icon><Collection /></el-icon>
+                  <span>创建词条</span>
+               </div>
+               <div class="create-item" @click="goToArticleAdd">
+                  <el-icon><Document /></el-icon>
+                  <span>发表文章</span>
+               </div>
+               <div class="create-item" @click="goToVideoAdd">
+                  <el-icon><VideoCamera /></el-icon>
+                  <span>发布视频</span>
+               </div>
+            </div>
+         </template>
+      </el-dropdown>
       
       <!-- 未登录 -->
       <button 
@@ -16,9 +44,9 @@
          <Cpu class="action-icon" />
       </button>
       
-      <!-- 已登录下拉菜单 -->
+      <!-- 已登录用户下拉菜单 -->
       <el-dropdown 
-         v-else 
+         v-if="userStore.isLoggedIn" 
          trigger="click" 
          placement="bottom-end"
          popper-class="user-dropdown"
@@ -85,7 +113,11 @@ import {
    Search, 
    Sunny, 
    User,
-   SwitchButton 
+   SwitchButton,
+   Plus,
+   Collection,
+   Document,
+   VideoCamera
 } from '@element-plus/icons-vue'
 import { useUserStore } from '@/stores/user'
 
@@ -94,6 +126,22 @@ const userStore = useUserStore()
 
 const goToLogin = () => {
    router.push('/login')
+}
+
+const goToSearch = () => {
+   router.push('/search')
+}
+
+const goToAnimeAdd = () => {
+   router.push('/anime/add')
+}
+
+const goToArticleAdd = () => {
+   router.push('/article/add')
+}
+
+const goToVideoAdd = () => {
+   router.push('/video/add')
 }
 
 const handleLogout = () => {
@@ -167,7 +215,45 @@ const handleLogout = () => {
 </style>
 
 <style lang="scss">
-// 下拉菜单全局样式
+// 创建下拉菜单全局样式
+.create-dropdown {
+   padding: 0 !important;
+   border-radius: 12px !important;
+   overflow: hidden;
+   
+   .create-menu {
+      width: 180px;
+      background: #fff;
+      padding: 8px 0;
+      
+      .create-item {
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         padding: 12px 20px;
+         cursor: pointer;
+         transition: background 0.2s;
+         font-size: 14px;
+         color: #333;
+         
+         &:hover {
+            background: #fff5f5;
+            color: #c41e3a;
+            
+            .el-icon {
+               color: #c41e3a;
+            }
+         }
+         
+         .el-icon {
+            font-size: 18px;
+            color: #666;
+         }
+      }
+   }
+}
+
+// 用户下拉菜单全局样式
 .user-dropdown {
    padding: 0 !important;
    border-radius: 12px !important;

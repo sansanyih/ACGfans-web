@@ -34,7 +34,7 @@
                <div class="rating-section" v-if="anime.viewingRecords?.length">
                   <div class="section-header">
                      <el-icon><TrendCharts /></el-icon>
-                     <span>游玩记录</span>
+                     <span>观看记录</span>
                      <el-button text class="more-btn">查看详情</el-button>
                   </div>
                   <div class="rating-content">

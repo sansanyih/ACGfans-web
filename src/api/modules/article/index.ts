@@ -16,6 +16,9 @@ export const articleApi = {
    // 获取文章详情
    getById(id: number): Promise<ArticleDetail> {
       return http.get(ARTICLE_URLS.GET_BY_ID(id))
+   },
+   insert(data: Partial<ArticleDetail>): Promise<ArticleDetail> {
+      return http.post(ARTICLE_URLS.INSERT, data)
    }
 }
 

@@ -41,3 +41,8 @@ __screenshots__/
 test-results/
 playwright-report/
 
+# 环境变量（新增，最重要）
+.env
+.env.*
+!.env.example
+
